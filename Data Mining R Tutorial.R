@@ -207,3 +207,12 @@ iris.sample<-iris[idx, ]
 iris.sample$Species<-NULL
 hc<-hclust(dist(iris.sample), method="ave")
 plot(hc, hang=-1, labels=iris$Species[idx])
+
+#Exercise 19
+install.packages("party")
+library("party")
+iris.ctree<-ctree(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data=iris)
+print(iris.ctree)
+plot(iris.ctree)
+
+
