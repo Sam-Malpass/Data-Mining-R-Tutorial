@@ -80,5 +80,20 @@ bools<-c(TRUE,FALSE,TRUE)
 df<-data.frame(nums, strs, bools)
 write.table(df, file="C:/myRprojects/myTable.txt")
 
+#Exercise 10
+mean(x, trim=0, na.rm=FALSE)
+mydata<-c(1.2,2.3,4.5,8.4)
+mean(mydata)
+mean(x=mydata)
+mean(trim=0.0, x=mydata)
+mean(na.rm=FALSE, trim=0.0, x=mydata)
+mean(mydata, 0.0, FALSE)
+xvals<-c(1:100)
+yvals<-xvals^2
+plot(xvals, yvals)
+plot(x=xvals, yvals, xlab="x")
+plot(xvals, yvals, xla="x axis")
+paste("a","b",sep="-")
+paste("a","b","c", sep="-")
 
 
