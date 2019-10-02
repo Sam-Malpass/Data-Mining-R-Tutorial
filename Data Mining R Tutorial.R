@@ -189,3 +189,15 @@ COLOR<-c(2:4)
 plot(pca$x[,1], pca$x[,2], col=COLOR[SPP], cex=1, xlab=paste0("PC1 (", round(pca$sdev[1]/sum(pca$sdev)*100, 0), "%)"), ylab=paste0("PC2 (", round(pca$sdev[2]/sum(pca$sdev)*100,0), "%)"))
 legend("topright", legend=levels(iris$Species), col=COLOR, pch=1)
 
+#Exercise 17
+set.seed(123)
+iris.km<-kmeans(iris[,-5],3,iter.max=100)
+clusterTable<-table(iris[,5], iris.km$cluster)
+clusterTable
+dat<-as.matrix(iris[,-5])
+pca<-prcomp(dat, retx=TRUE, center=TRUE, scale=TRUE)
+CID<-iris.km$cluster
+COLOR<-c(2:4)
+plot(pca$x[,1], pca$x[,2], col=COLOR[CID], cex=1, xlab=paste0("PC1 (", round(pca$sdev[1]/sum(pca$sdev)*100, 0), "%)"), ylab=paste0("PC2 (", round(pca$sdev[2]/sum(pca$sdev)*100,0), "%)"))
+legend("topright", legend=levels(factor(iris.km$cluster)), col=COLOR, pch=1)
+
