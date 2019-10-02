@@ -58,5 +58,17 @@ mylist.C<-list("Alex", 28, FALSE)
 mylist.ABC<-list(mylist.A, mylist.B, mylist.C)
 mylist.ABC
 
+#Exercise 8
+nums<-c(3,5,1)
+str<-c("hello", "bye", "ciao")
+bools<-c(TRUE, FALSE, FALSE)
+df<-data.frame(nums,str,bools)
+df
+class(df)
+class(iris)
+head(iris)
+
+
+
 
 
