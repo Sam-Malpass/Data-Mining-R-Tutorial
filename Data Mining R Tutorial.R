@@ -68,7 +68,17 @@ class(df)
 class(iris)
 head(iris)
 
-
+#Exercise 9
+myData<-read.csv("mydata.csv")
+library(gdata)
+myData<-read.xls("myData.xls")
+phddata<-read.table("http://data.princeton.edu/wws509/datasets/phd.dat")
+phddata
+nums<-c(1,2,3)
+strs<-c("aa","bb","cc")
+bools<-c(TRUE,FALSE,TRUE)
+df<-data.frame(nums, strs, bools)
+write.table(df, file="C:/myRprojects/myTable.txt")
 
 
 
