@@ -96,4 +96,30 @@ plot(xvals, yvals, xla="x axis")
 paste("a","b",sep="-")
 paste("a","b","c", sep="-")
 
+#Exercise 11
+x<-seq(-3, 3, .1)
+y<-dnorm(x)
+plot(x,y)
+x<-seq(-3,3,.1)
+y<-dnorm(x)
+plot(x,y, type="l")
+title("Normal Density Function", col.main="seagreen")
+colors()
+pie(rep(1,16), col=rainbow(16))
+attach(mtcars)
+hist(wt, main="Histogram of Wt")
+barplot(table(iris$Species))
+fun1<-function(x){(1-4*x-x^3/17)*sin(x^2)}
+x1<-seq(-15,15,0.1)
+plot(x1,fun1(x1), type="l", col="red")
+fun2<-function(x){x/sqrt(1+x^2)}
+x2<-seq(-5,5,0.1)
+plot(x2,fun2(x2), type="l", col="blue")
+plot(x1,fun1(x1), type="l", col="red")
+par(new=TRUE)
+plot(x2,fun2(x2), type="l", col="blue")
+par(mfrow=c(1,2))
+plot(x1,fun1(x1), type="l", col="red")
+plot(x2,fun2(x2), type="l", col="blue")
+
 
