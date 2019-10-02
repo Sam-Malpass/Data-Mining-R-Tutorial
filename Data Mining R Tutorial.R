@@ -215,4 +215,8 @@ iris.ctree<-ctree(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Wi
 print(iris.ctree)
 plot(iris.ctree)
 
+#Exercise 20
+iris_test<-iris
+predictions<-predict(iris.ctree, new_data=iris_test)
+table(predictions, iris_test$Species)
 
