@@ -147,5 +147,36 @@ install.packages("ggplot2")
 library(ggplot2)
 
 #Exercise 15
-
+?eurodist
+eurodist
+?cmdscale
+euro2D<-cmdscale(eurodist, k=2, eig=T)
+euro3D<-cmdscale(eurodist, k=3, eig=T)
+euro4D<-cmdscale(eurodist, k=4, eig=T)
+euro2D
+euro3D
+euro4D
+max.k<-12
+P.k1<-rep(0,max.k)
+P.k2<-rep(0,max.k)
+SStress<-rep(0,max.k)
+for(kk in 1:max.k) {
+  my.mds.kk<-cmdscale(eurodist, k=kk, eig=T)
+  P.k1[kk]<-my.mds.kk$GOF[1]
+  P.k2[kk]<-my.mds.kk$GOF[2]
+  SStress[kk]<-(sum((eurodist^2 - (dist(my.mds.kk$points))^2)^2)/sum(eurodist^4))^0.5
+}
+cbind(1:max.k,P.k1)
+cbind(1:max.k,P.k2)
+P.k1
+P.k2
+SStress
+par(pty="s")
+plot(euro2D$points[,1], euro2D$points[,2], type='n', xlab="Coordinate 1", ylab="Coordinate 2", xlim=c(-2500,2500), ylim=c(-2500,2500))
+text(euro2D$points[,1], euro2D$points[,2], labels=labels(eurodist))
+euro.abb<-abbreviate(labels(eurodist))
+plot(euro2D$points[,1], euro2D$points[,2], type='n', xlab="Coordinate 1", ylab="Coordinate 2", xlim=c(-2500,2500), ylim=c(-2500, 2500))
+text(euro2D$points[,1], euro2D$points[,2], labels=euro.abb)
+plot(euro2D$points[,1], euro2D$points[,2], type='n', xlab="Coordinate 1", ylab="Coordinate 2", xlim=c(-2500, 2500), ylim=c(-2500,2500))
+text(euro2D$points[,1], euro2D$points[,2], labels=euro.abb)
 
