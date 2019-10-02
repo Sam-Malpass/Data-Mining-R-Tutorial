@@ -4,3 +4,8 @@ x
 y
 paste(x,y)
 help(paste)
+
+ls()
+rm(x,y)
+?rm
+
