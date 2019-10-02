@@ -130,3 +130,22 @@ plot(x1, fun1(x1), type="l", col="red", main="plot 1")
 plot(x2, fun2(x2), type="l", col="blue", main="plot 2")
 dev.off()
 
+#Exercise 13
+setwd("C:\\Users\\sam\\Documents\\R Scripts\\Data Mining R Tutorial\\")
+png("testfigure.png", height=240, width=640)
+par(mfrow=c(1,2), mar=c(4,4,3,1))
+plot(x1, fun1(x1), type="l", col="red", main="plot 1")
+plot(x2, fun2(x2), type="l", col="blue", main="plot 2")
+dev.off()
+
+#Exercise 14
+.libPaths()
+library()
+search()
+library(help="stats")
+install.packages("ggplot2")
+library(ggplot2)
+
+#Exercise 15
+
+
