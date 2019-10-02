@@ -44,5 +44,19 @@ A
 A[1,2]
 A[1,]
 
+#Exercise 7
+Lst<-list(name="Bob", wife="Mary", no.children=3, child.ages=c(4,7,9))
+Lst
+Lst[[2]]
+Lst$wife
+Lst[["wife"]]
+Lst[[4]]
+Lst[[4]][2]
+mylist.A<-list("Bob", 32, TRUE)
+mylist.B<-list("Jack", 35, FALSE)
+mylist.C<-list("Alex", 28, FALSE)
+mylist.ABC<-list(mylist.A, mylist.B, mylist.C)
+mylist.ABC
+
 
 
