@@ -220,3 +220,13 @@ iris_test<-iris
 predictions<-predict(iris.ctree, new_data=iris_test)
 table(predictions, iris_test$Species)
 
+#Exercise 21
+install.packages("rpart")
+library("rpart")
+iris.dt<-rpart(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data=iris, method="class")
+summary(iris.dt)
+printcp(iris.dt)
+plotcp(iris.dt)
+plot(iris.dt, uniform=TRUE, main="Decision Tree for the iris dataset")
+text(iris.dt, use.n=TRUE, all=TRUE, cex=.8)
+post(iris.dt, file="C:/Users/sam/Documents/R Scripts/Data Mining R Tutorial/iris_DT.ps", title="Decision Tree for the iris dataset")
