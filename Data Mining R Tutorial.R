@@ -25,5 +25,11 @@ y
 c(1.1, 2.3, 3.14, 6.28, 69.96)->z
 z
 
+#Exercise 5
+values<-c('C','A','D','B','C','A','B','B','B','A')
+factors<-factor(values)
+factors
+levels(factors)
+
 
 
