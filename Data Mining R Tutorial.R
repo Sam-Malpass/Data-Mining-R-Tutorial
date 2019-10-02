@@ -31,5 +31,18 @@ factors<-factor(values)
 factors
 levels(factors)
 
+#Exercise 6
+myArray<-array(c(1,2,3,4,5,6), dim=c(3,2))
+myArray
+myVect<-c(1,2,3,4,5,6)
+dim(myVect)<-c(3,2)
+myVect
+myArray<-array(1:8, dim=c(2,2,2))
+myArray
+A<-matrix(c(1,2,3,4,5,6), nrow=3, ncol=2, byrow=TRUE)
+A
+A[1,2]
+A[1,]
+
 
 
