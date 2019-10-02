@@ -201,3 +201,9 @@ COLOR<-c(2:4)
 plot(pca$x[,1], pca$x[,2], col=COLOR[CID], cex=1, xlab=paste0("PC1 (", round(pca$sdev[1]/sum(pca$sdev)*100, 0), "%)"), ylab=paste0("PC2 (", round(pca$sdev[2]/sum(pca$sdev)*100,0), "%)"))
 legend("topright", legend=levels(factor(iris.km$cluster)), col=COLOR, pch=1)
 
+#Exercise 18
+idx<-sample(1:dim(iris)[1], 40)
+iris.sample<-iris[idx, ]
+iris.sample$Species<-NULL
+hc<-hclust(dist(iris.sample), method="ave")
+plot(hc, hang=-1, labels=iris$Species[idx])
