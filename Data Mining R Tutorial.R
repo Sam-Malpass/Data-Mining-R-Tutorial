@@ -180,3 +180,12 @@ text(euro2D$points[,1], euro2D$points[,2], labels=euro.abb)
 plot(euro2D$points[,1], euro2D$points[,2], type='n', xlab="Coordinate 1", ylab="Coordinate 2", xlim=c(-2500, 2500), ylim=c(-2500,2500))
 text(euro2D$points[,1], euro2D$points[,2], labels=euro.abb)
 
+#Exercise 16
+dat<-as.matrix(iris[,-5])
+pca<-prcomp(dat, retx=TRUE, center=TRUE, scale=TRUE)
+pca
+SPP<-iris$Species
+COLOR<-c(2:4)
+plot(pca$x[,1], pca$x[,2], col=COLOR[SPP], cex=1, xlab=paste0("PC1 (", round(pca$sdev[1]/sum(pca$sdev)*100, 0), "%)"), ylab=paste0("PC2 (", round(pca$sdev[2]/sum(pca$sdev)*100,0), "%)"))
+legend("topright", legend=levels(iris$Species), col=COLOR, pch=1)
+
